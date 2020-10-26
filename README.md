@@ -5,7 +5,7 @@ A project that makes a data analysis and creates a model for classification of c
 ## Dataset Information
 
 <div align='center'>
-    <img alt='cardiovascular-disease' src='https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/heart-illustration--tojpeg_1490283716384_x2.jpg' width='100%' height='190'>
+    <img alt='cardiovascular-disease' src='https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/heart-illustration--tojpeg_1490283716384_x2.jpg' width='100%' height='200'>
 </div>
 
 <br>
@@ -88,3 +88,7 @@ It may help to avoid the data scietist to stop in one specific step and wast tim
 * [Image Reference](https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/heart-illustration--tojpeg_1490283716384_x2.jpg)
 
 * [CRISP-DM Image](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
