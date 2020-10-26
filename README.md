@@ -2,13 +2,17 @@
 
 A project that makes a data analysis and creates a model for classification of cardovascular disease.
 
-## Data Set Information
+## Dataset Information
+
+<div align='center'>
+    <img alt='cardiovascular-disease' src='https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/heart-illustration--tojpeg_1490283716384_x2.jpg' width='100%' height='190'>
+</div>
+
+<br>
 
 This dataset was published on the Kaggle competition platform. For more information it can be seen accessing this [link](https://www.kaggle.com/sulianova/cardiovascular-disease-dataset). However the context was created by author of the site [Be a Data Scientist](https://sejaumdatascientist.com/projeto-de-data-science-diagnostico-precoce-de-doencas-cardiovasculares/).
 
-![cardiovascular-disease](https://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/heart-illustration--tojpeg_1490283716384_x2.jpg)
-
-### Attribute Information:
+### Attributes
 
 1. Age | Objective Feature | age | int (days)
 1. Height | Objective Feature | height | int (cm) |
