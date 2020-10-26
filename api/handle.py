@@ -1,9 +1,9 @@
-import pickle
 import pandas as pd
-from flask import Flask, request, Response
+from joblib import load
 from cardio.Cardio import Cardio
+from flask import Flask, request, Response
 
-model = pickle.load(open("/home/junior/Github/data-science-projects/Classification/Cardiovascular Disease Diagnosis/models/model_cardio.pkl", "rb"))
+model = load("../models/model_cardio.joblib")
     
 # loading
 app = Flask(__name__)
@@ -13,13 +13,13 @@ def cardio_predict():
     test_json = request.get_json()
    
     if test_json: # there is data
+        
         if isinstance(test_json, dict): # unique example
             test_raw = pd.DataFrame(test_json, index=[0])
             
         else: # multiple example
             test_raw = pd.DataFrame(test_json, columns=test_json[0].keys())
             
-        # Instantiate Rossmann class
         pipeline = Cardio()
         
         # data cleaning

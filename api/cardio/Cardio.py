@@ -1,4 +1,4 @@
-import pickle
+from joblib import load
 import numpy as np
 import pandas as pd
 
@@ -61,7 +61,7 @@ class Cardio():
     
     def __init__(self):
         
-        self.scaler = pickle.load(open("../services/robust_scaler.pkl", "rb"))
+        self.scaler = load("../services/robust_scaler.joblib")
             
     def data_cleaning(self, df1):
         
@@ -71,8 +71,6 @@ class Cardio():
     
         df1 = df1[(df1["systolic_blood_pressure"] < 300) & (df1["systolic_blood_pressure"] > 0)]
         df1 = df1[(df1["diastolic_blood_pressure"] < 300) & (df1["diastolic_blood_pressure"] > 0)]
-
-        df1 = df1.drop(columns=["age"], axis=1)
     
         return df1
     
@@ -84,12 +82,14 @@ class Cardio():
         df2["IBM"] = df2[["height", "weight"]].apply(lambda i: calcIBM(i["weight"], i["height"]/100), axis=1)
         df2["weight_status"] = df2["IBM"].apply(catIBM)
         
+        df2 = df2.drop("age", axis=1)
+        
         return df2
     
     def data_preparation(self, df3):
         
         #recaling
-        df3[["height", "weight", "systolic_blood_pressure", "diastolic_blood_pressure", "age_year", "IBM"]] = scaler.transform(df3[["height", "weight", "systolic_blood_pressure", "diastolic_blood_pressure", "age_year", "IBM"]])
+        df3[["height", "weight", "systolic_blood_pressure", "diastolic_blood_pressure", "age_year", "IBM"]] = self.scaler.transform(df3[["height", "weight", "systolic_blood_pressure", "diastolic_blood_pressure", "age_year", "IBM"]])
         
         #selected columns
         best_columns = ['height', 'weight', 'systolic_blood_pressure', 'diastolic_blood_pressure', 'age_year', 'IBM']
