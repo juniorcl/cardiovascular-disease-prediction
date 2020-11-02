@@ -14,7 +14,7 @@ def getLifeStage(age):
         life_stage = "Middle Childhood"
         
     elif age >= 9 and age <= 11:
-        lige_stage = "Late Childhood"
+        life_stage = "Late Childhood"
         
     elif age >= 12 and age <= 20:
         life_stage = "Adolescence"
@@ -61,7 +61,7 @@ class Cardio():
     
     def __init__(self):
         
-        self.scaler = load("../services/robust_scaler.joblib")
+        self.scaler = load("../parameters/robust_scaler.joblib")
             
     def data_cleaning(self, df1):
         
